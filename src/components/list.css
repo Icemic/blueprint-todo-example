@@ -4,6 +4,11 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
+  color: rgba(92, 112, 128, 0.8);
+}
+.todo-content select {
+  margin-left: 5px;
+  color: rgba(92, 112, 128, 0.8);
 }
 .todo-list {
   width: 100%;

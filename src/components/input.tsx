@@ -34,7 +34,8 @@ export default function Input({ onInsert }: InputProps) {
     <InputGroup
       fill
       large
-      leftIcon="document"
+      placeholder="add a task here..."
+      leftIcon="plus"
       onKeyDown={handleKeyDown}
       onChange={handleChange}
       rightElement={
