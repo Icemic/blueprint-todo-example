@@ -1,5 +1,6 @@
-import React from 'react';
-import { Card, Elevation, UL } from '@blueprintjs/core';
+import React, { useState } from 'react';
+import { UL } from '@blueprintjs/core';
+
 import Item, { ItemStruct } from './item';
 import './list.css';
 
@@ -11,9 +12,18 @@ export interface ListProps {
 }
 
 export default function List({ data, onPendingEvent }: ListProps) {
-  return (
-    <UL className="todo-list">
-      {data.map((item, i) => (
+  const [filter, setFilter] = useState('all');
+
+  function handleSelect(evt: React.ChangeEvent<HTMLSelectElement>) {
+    const value = evt.currentTarget.value;
+    setFilter(value);
+  }
+
+  let count = 0;
+  let list = data.map((item, i) => {
+    if (filter === 'all' || item.status === filter) {
+      count += 1;
+      return (
         <Item
           title={item.title}
           status={item.status}
@@ -38,7 +48,26 @@ export default function List({ data, onPendingEvent }: ListProps) {
           }
           onDelete={() => onPendingEvent('del', i, item)}
         />
-      ))}
-    </UL>
+      );
+    }
+  });
+
+  return (
+    <div className="todo-content">
+      <section>
+        <p>
+          {count} showed, in total of {data.length}
+        </p>
+        <div>
+          <label>Filter </label>
+          <select onChange={handleSelect}>
+            <option value="all">All</option>
+            <option value="todo">Todo</option>
+            <option value="done">Done</option>
+          </select>
+        </div>
+      </section>
+      <UL className="todo-list">{list}</UL>
+    </div>
   );
 }
