@@ -4,7 +4,11 @@
   justify-content: flex-start;
   align-items: center;
   width: 100%;
+  padding: 5px 5px;
+  border-radius: 5px;
   list-style: none;
+  background-color: rgba(92, 112, 128, 0);
+  transition: background-color .3s ease-out;
 }
 .todo-item .bp3-editable-text {
   width: 100%;
@@ -24,6 +28,8 @@
   justify-content: space-between;
   width: 112px;
   height: 30px;
+  opacity: 0;
+  transition: opacity .2s ease-out;
 }
 .todo-item-dot {
   margin-left: 10px;
@@ -37,4 +43,10 @@
   align-items: center;
   width: 100%;
   color: rgba(92, 112, 128, 0.8);
+}
+.todo-item:hover {
+  background-color: rgba(92, 112, 128, 0.1);
+}
+.todo-item:hover .todo-actions {
+  opacity: 1;
 }
