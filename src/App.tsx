@@ -6,21 +6,14 @@ import { ItemStruct } from './components/item';
 import { H1 } from '@blueprintjs/core';
 
 function App() {
-  const [data, setData] = useState([
-    {
-      title: '测试文本',
-      status: 'todo',
-    },
-    {
-      title: '测试文本22222',
-      status: 'done',
-    },
-  ] as ItemStruct[]);
+  const [data, setData] = useState([] as ItemStruct[]);
   function handleInsert(value: string) {
     setData([
       {
         title: value,
         status: 'todo',
+        // just for demo
+        id: Math.random().toFixed(36).slice(2)
       },
       ...data,
     ]);

@@ -27,7 +27,7 @@ export default function List({ data, onPendingEvent }: ListProps) {
         <Item
           title={item.title}
           status={item.status}
-          key={item.title}
+          key={item.id}
           onEdit={(value) =>
             onPendingEvent('edit', i, {
               ...item,

@@ -5,13 +5,15 @@ import './item.css';
 export interface ItemStruct {
   title: string;
   status: 'todo' | 'done';
+  id: string;
+}
+
+export interface ItemProps extends Pick<ItemStruct, 'title' | 'status'> {
   onEdit?: (value: string) => void;
   onDone?: () => void;
   onRedo?: () => void;
   onDelete?: () => void;
 }
-
-export interface ItemProps extends ItemStruct {}
 
 export default function Item({ title, status, onEdit, onRedo, onDone, onDelete }: ItemProps) {
   function handleEdit(value: string) {
