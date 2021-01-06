@@ -25,6 +25,8 @@ export default function Input({ onInsert }: InputProps) {
   function handleKeyDown(evt: React.KeyboardEvent<HTMLInputElement>) {
     if (evt.key === 'Enter') {
       onInsert?.(value);
+      setWordCount(0);
+      setValue("");
     }
   }
 
