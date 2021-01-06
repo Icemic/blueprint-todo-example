@@ -1,0 +1,75 @@
+@import '~normalize.css';
+@import '~@blueprintjs/core/lib/css/blueprint.css';
+@import '~@blueprintjs/icons/lib/css/blueprint-icons.css';
+
+:focus {
+  outline: none;
+}
+
+.bp3-monospace-text {
+  font-family: Consolas, 'Courier New', Courier, monospace;
+}
+
+.bp3-elevation-2, 
+.bp3-elevation-2:focus {
+  box-shadow: 0 0 0 rgba(16, 22, 26, 0.1), 0 0 0 rgba(16, 22, 26, 0.2), 0 2px 6px rgba(16, 22, 26, 0.2);
+}
+
+* {
+  font-family: 'PingFang SC', 'Source Han Sans CN', 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f5f8fa;
+}
+
+.head {
+  width: 100%;
+  text-align: center;
+  font-size: 48px;
+  color: red;
+  opacity: 0.3;
+}
+
+@media (min-width: 0) and (orientation: portrait) {
+  html,
+  body,
+  #root {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100vw;
+  }
+  .App {
+    padding: 0 10px;
+    width: unset;
+  }
+  .main-card {
+    width: 100%;
+  }
+}
+
+@media (min-width: 650px) {
+  html,
+  body,
+  #root {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+  }
+  .App {
+    margin: 0 auto;
+    padding: 10px;
+    width: 600px;
+  }
+  .main-card {
+    width: 600px;
+    height: 720px;
+    overflow: hidden;
+  }
+}
