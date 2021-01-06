@@ -21,10 +21,9 @@ export default function Item({ title, status, onEdit, onRedo, onDone, onDelete }
   const content = (
     <H3 className="todo-item-text">
       <EditableText
-        value={title}
+        defaultValue={title}
         maxLength={20}
         placeholder="You must input something..."
-        selectAllOnFocus
         onConfirm={handleEdit}
       />
     </H3>
