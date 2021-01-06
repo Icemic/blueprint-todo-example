@@ -1,0 +1,40 @@
+.todo-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  list-style: none;
+}
+.todo-item .bp3-editable-text {
+  width: 100%;
+  display: block !important;
+}
+.todo-item-text {
+  flex: 1;
+  padding-right: 20px !important;
+  margin-bottom: 0 !important;
+  font-weight: normal !important;
+  color: rgba(92, 112, 128, 0.8) !important;
+}
+.todo-actions {
+  flex: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 112px;
+  height: 30px;
+}
+.todo-item-dot {
+  margin-left: 10px;
+  margin-right: 10px;
+  color: rgba(92, 112, 128, 0.8);
+}
+.todo-item-del {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  color: rgba(92, 112, 128, 0.8);
+}
